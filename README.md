@@ -1,31 +1,29 @@
 # EESEC 440 English for EEE on DL
 ## I. Artificial Neural Networks
+
 Artificial neural networks (ANN) are extremely powerful structures that are capable of relating input-output data with utmost complexity. The increment in computational power provided by the new generation Graphical Processing Units (GPU) in the last decade enabled ANN to solve many engineering problems in various fields of study (e.g., Computer Vision, speech recognition, Natural Language Processing, power transfer [1], etc). There are different flavors of ANN designed for different applications depending on the needs. Multi-layer Perceptron (MLP) is one of the most preferred type of network commonly employed in regression and classification problems, which are two major functions of a ANN.
-### A. Multi-layer Perceptron (MLP)
-We will study MLP elaborately throughout the course. Regression and classification examples, both supervised learning. Please see *Fig. 1* for an example MLP network structure.
 
-<img src="https://www.researchgate.net/profile/Mohamed-Zahran-16/publication/303875065/figure/fig4/AS:371118507610123@1465492955561/A-hypothetical-example-of-Multilayer-Perceptron-Network.png" alt="A multiple input single output MLP." height="240"/>
+**A. Multi-layer Perceptron (MLP)**
 
-*Fig. 1:* A multi input single output MLP. 
+We will study MLP elaborately throughout the course. Regression and classification examples, both supervised learning. Please see Fig. 1 for an example MLP network structure.
 
-#### Exclusive OR (XOR) Problem
-<img src="figure/xor_problem_smaller.jpg" alt="MLP network is going to learn XOR problem." height="180"/>
+![122469761-fb816400-cfc5-11eb-876d-3af765f73169](https://user-images.githubusercontent.com/83131484/122642597-f6322f80-d113-11eb-9ba4-e6076fbc2a5b.png)
+Fig. 1: A multi input single output MLP.
 
-*Fig. 2:* A MLP network is going to learn XOR problem.
+**Exclusive OR (XOR) Problem**
 
-<img src="figure/xor_MLP.jpg" alt="For the XOR problem, we use a MLP with one hidden layer consisting of sixteen neurons." height="360"/>
+![122469163-4babf680-cfc5-11eb-86a0-534f9aef5e9b](https://user-images.githubusercontent.com/83131484/122642628-0ba75980-d114-11eb-8171-53b6f0373216.jpg)
+Fig. 2: A MLP network is going to learn XOR problem.
+![122468881-f374f480-cfc4-11eb-923a-8d33ee8667cf](https://user-images.githubusercontent.com/83131484/122642676-50cb8b80-d114-11eb-9666-c9e04681e339.jpg)
+Fig. 3: For the XOR problem, we use a MLP with one hidden layer consisting of sixteen neurons.
 
-*Fig. 3:* For the XOR problem, we use a MLP with one hidden layer consisting of sixteen neurons.
+![122468930-038cd400-cfc5-11eb-9a71-c9c050e5ad3d](https://user-images.githubusercontent.com/83131484/122642685-604ad480-d114-11eb-8fef-a1a0bf8da0db.jpg)
+Fig. 4: Error back-propogation algorithm (e.g., Gradient Descent) is used to update the network parameters.
 
-<img src="figure/ANN_MLP_flow_chart.jpg" alt="Error back-propogation algorithm is used to update the network parameters." height="240"/>
+**Çok Katmanlı bir Yapay Sinir Ağının Ayarlabilen Parametre (Ağırlık) Sayısı**
 
-*Fig. 4:* Error back-propogation algorithm (e.g., Gradient Descent) is used to update the network parameters.
-#### Çok Katmanlı bir Yapay Sinir Ağının Ayarlabilen Parametre (Ağırlık) Sayısı
-<img src="figure/MLP specific.jpg" alt="A MLP network with one input, three neurons in the hidden layer and single output." height="360"/>
-
-*Fig. 5:* A MLP network with one input, three neurons in the hidden layer and single output. This network has 2 : 3 : 1 configuration.
-
-Yukarıda *Fig. 5*'de gösterilen yapay sinir ağının konfigurasyonu 2 : 3 : 1 olup, giriş katmanında iki, gizli katmanında üç ve çıkış katmanında bir nöron bulundurmaktadır (yuvarlaklar nöronları temsil ediyor). Şekilde ayarlanabilen parametre sayısı 13 olarak gözüküyor: w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13. Ara sınavda karşımıza çıkabilecek benzer bir yapıda, verilen konfigürasyona göre ayarlanabilen parametre (ağırlık) sayısını hem elimizle çizerek, hem de formülize ederek kısa yoldan hesaplayabiliriz. Formülü siz de biraz düşünürseniz kendiniz çıkarabilirsiniz. Giriş, çıkış ve bir gizli katmandan oluşan bir yapay sinir ağındaki toplam ayarlanabilen parametre (ağırlık - weight) sayısını bulan formül şöyle:
+![122468881-f374f480-cfc4-11eb-923a-8d33ee8667cf](https://user-images.githubusercontent.com/83131484/122642700-735da480-d114-11eb-906b-f34ba32e0df0.jpg)
+Fig. 5: A MLP network with one input, three neurons in the hidden layer and single output. This network has 2 : 3 : 1 configuration. Yukarıda Fig. 5'de gösterilen yapay sinir ağının konfigurasyonu 2 : 3 : 1 olup, giriş katmanında iki, gizli katmanında üç ve çıkış katmanında bir nöron bulundurmaktadır (yuvarlaklar nöronları temsil ediyor). Şekilde ayarlanabilen parametre sayısı 13 olarak gözüküyor: w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13. Verilen konfigürasyona göre ayarlanabilen parametre (ağırlık) sayısını hem elimizle çizerek, hem de formülize ederek kısa yoldan hesaplayabiliriz. Formülü siz de biraz düşünürseniz kendiniz çıkarabilirsiniz. Giriş, çıkış ve bir gizli katmandan oluşan bir yapay sinir ağındaki toplam ayarlanabilen parametre (ağırlık - weight) sayısını bulan formül şöyle:
 
 n = (n1 x n2 + n2) + (n2 x n3 + n3)
 
@@ -33,40 +31,19 @@ Burada n1 giriş katmanındaki nöron sayısı, n2 gizli katmandaki nöron sayı
 
 n = n2(n1 + 1) + n3(n2 + 1)
 
-*Fig. 5*'de verilen 2 : 3 : 1 konfigürasyonlu ağı formülde test edecek olursak n = 3(2 + 1) + 1(3 + 1) = 3 x 3 + 1 x 4 = 13 değerini onaylamış oluruz.
+Fig. 5'de verilen 2 : 3 : 1 konfigürasyonlu ağı formülde test edecek olursak n = 3(2 + 1) + 1(3 + 1) = 3 x 3 + 1 x 4 = 13 değerini onaylamış oluruz.
+![122469282-71d19680-cfc5-11eb-87c1-1a834005ce0d](https://user-images.githubusercontent.com/83131484/122642716-7f496680-d114-11eb-8e05-5627efd82b25.jpg)
 
-**Not:** Ara sınavdaki en zor soru **Çok Katmanlı bir Yapay Sinir Ağının Ayarlabilen Parametre (Ağırlık) Sayısı** sorusu denebilir. Ancak soru içinde bütün açıklamalar mevcut. Ayrıca sınav 2 saat, toplam soru sayısı 11 (bütün sorular çoktan seçmeli yani sınav test) dolayısıyla yeterli vakit var. İçinizden bazıları bu tarz bir hesaplamayı derste açıkça görmediğimizden yakınabilir. Çok basit bir soru olmasına rağmen puan kaybı yaşayanlar **github** hesabı oluşturup derste yaptığımız birkaç örneği hesaplarına iterek telafi ettikleri puanları kazanabilirler kolaylıkla. Size örnek olsun diye buraya bir alıştırma sonucunu yazayım: 2 : 4 : 2 konfigürasyonundaki bir çok katmanlı yapay sinir ağında toplam 
+**2 Boyutlu Sınıflandırma Problemi**
+![122469353-86159380-cfc5-11eb-9ec1-92afdc84ff88](https://user-images.githubusercontent.com/83131484/122642729-8e301900-d114-11eb-9fbe-5b751bc50fa3.jpg)
+Fig. 6: 2 boyutlu sınıflandırma probleminde en başta karşılaşılan bazı adımlar.
 
-n = 4(2 + 1) + 2(4 + 1) = 22 
-
-ayarlanabilen ağırlık vardır. Ben sizin yerinizde olsam formülü anlamasam bile (ki oldukça basit bir formül) verilen konfigürasyondaki çok katmanlı yapay sinir ağını elimle çizer ve ayarlanabilen ağırlıkları tek tek sayarım. Sınavda, *Fig. 5*'de gördüğümüz zorluk seviyesinde bir soru karşımıza çıkacak.
-
-Final sınavında ise burada *Fig. 5*'deki gibi iki katmanlı (giriş katmanı sayılmadığından iki katman deniyor, yoksa üç katmanlı) değil birden fazla gizli katmana sahip bir yapay sinir ağında ne kadar ayarlanabilen parametre (ağırlık) olduğunu soracağım. Dikkatlice düşünecek olursak, yukarıda iki katmanlı (giriş katmanı sayılmadığından iki katman deniyor, yoksa üç katmanlı) bir ağ yapısı için türettiğimiz formülü k-1 katmanlı bir MLP için aşağıdaki gibi genelleştirebiliriz.
-
-<img src="equation/formula number of weights.JPG" alt="Formula for number of weights in a MLP." height="60"/>
-
-#### 2 Boyutlu Sınıflandırma Problemi
-<img src="figure/data annotation midterm question.jpg" alt="A 2d classification problem." height="400"/>
-
-*Fig. 6:* Derste işlediğimiz 2 boyutlu sınıflandırma probleminde en başta karşılaştığımız bazı adımlar.
-
-#### En Küçük Kareler (Least Squares)
-<img src="figure/least squares gradient descent.png" alt="A least squares problem." height="500"/>
-
-*Fig. 7:* Derste işlediğimiz bir boyutlu optimizasyon (veya regresyon) probleminin görselleştirilmiş hali.
-
-### B. Convolutional Neural Network (CNN)
-We might study classification example on images in the last weeks of the course. Cats-dogs image repository on Kaggle. We will follow the tutorial given in [2]. Please see Figures 8 and 9 for classification of cat and dog images via CNN. 
-
-<img src="figure/cats_dogs_cnn.png" alt="Cats and dogs classification via CNN." height="240"/>
-
-*Fig. 8: Classification of cat & dog images via CNN.*
-
-<img src="figure/cats_dogs_classification.gif" alt="Cats and dogs classification with deep learning." height="240"/>
-
-*Fig. 9: Cats and dogs classification with deep learning.*
-
-
-## References
-[1] T. Guillod, P. Papamanolis and J. W. Kolar, "Artificial Neural Network (ANN) Based Fast and Accurate Inductor Modeling and Design," in IEEE Open Journal of Power Electronics, vol. 1, pp. 284-299, 2020, doi: 10.1109/OJPEL.2020.3012777.</br>
-[2] "How to classify photos of dogs and cats (with 97% accuracy)." https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/. Accessed: 2021-3-10.</br>
+**En Küçük Kareler (Least Squares)**
+![122469391-93328280-cfc5-11eb-8e56-4cb25022fbc8](https://user-images.githubusercontent.com/83131484/122642742-a011bc00-d114-11eb-89d8-9f67f8535b4b.png)
+Fig. 7: Bir boyutlu optimizasyon (veya regresyon) probleminin görselleştirilmiş hali.
+**B. Convolutional Neural Network (CNN)**
+We might study classification example on images in the last weeks of the course. Cats-dogs image repository on Kaggle. We will follow the tutorial given in [2]. Please see Figures 8 and 9 for classification of cat and dog images via CNN.
+<img width="1153" alt="122469484-afceba80-cfc5-11eb-9a4a-70c842359fcc" src="https://user-images.githubusercontent.com/83131484/122642771-ba4b9a00-d114-11eb-8f13-958f093b19f0.png">
+Fig. 8: Classification of cat & dog images via CNN.
+![122469518-b826f580-cfc5-11eb-9f65-dd3137e880c8](https://user-images.githubusercontent.com/83131484/122642777-c20b3e80-d114-11eb-8142-6c5ef30a9682.gif)
+Fig. 9: Cats and dogs classification with deep learning.
