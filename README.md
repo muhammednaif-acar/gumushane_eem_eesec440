@@ -47,3 +47,8 @@ We might study classification example on images in the last weeks of the course.
 Fig. 8: Classification of cat & dog images via CNN.
 ![122469518-b826f580-cfc5-11eb-9f65-dd3137e880c8](https://user-images.githubusercontent.com/83131484/122642777-c20b3e80-d114-11eb-8142-6c5ef30a9682.gif)
 Fig. 9: Cats and dogs classification with deep learning.
+
+# References
+
+[1] T. Guillod, P. Papamanolis and J. W. Kolar, "Artificial Neural Network (ANN) Based Fast and Accurate Inductor Modeling and Design," in IEEE Open Journal of Power Electronics, vol. 1, pp. 284-299, 2020, doi: 10.1109/OJPEL.2020.3012777.
+[2] "How to classify photos of dogs and cats (with 97% accuracy)." https://machinelearningmastery.com/how-to-develop-a-convolutional-neural-network-to-classify-photos-of-dogs-and-cats/. Accessed: 2021-3-10.
